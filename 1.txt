@@ -1,3 +1,3 @@
-new 1
-new
-new
+every 1
+every
+every
