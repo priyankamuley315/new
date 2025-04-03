@@ -1,0 +1,33 @@
+name: Update Files with sed
+
+on:
+  push:
+    branches:
+      - master  # Change to your target branch
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  update_files:
+    runs-on: ubuntu-latest  # Using an Ubuntu runner for simplicity
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Find and update all files using sed
+      - name: Update files using sed
+        run: |
+          # Find all files (recursively) and apply sed command to each file
+          find . -type f "*.txt" -exec sed -i 's/hello/hi/g' {} \;  # Replace 'old-text' with 'new-text' in each file
+
+      # Step 3: Commit and push the changes
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "priyankamuley315"
+          git config --global user.email "priyankamuley315@gmail.com"
+          git add .
+          git commit -m "Automated update to all files using sed"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
