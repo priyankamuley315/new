@@ -1,2 +1,2 @@
-hi new file to test poll SCM feature
+new new file to test poll SCM feature
 priyanka
