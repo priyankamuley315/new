@@ -19,7 +19,7 @@ jobs:
       - name: Update files using sed
         run: |
           # Find all files (recursively) and apply sed command to each file
-          find . -type f "*.txt" -exec sed -i 's/hello/hi/g' {} \;  # Replace 'old-text' with 'new-text' in each file
+          find . -type f '*.txt' -exec sed -i 's/hello/hi/g' {} \;  # Replace 'old-text' with 'new-text' in each file
 
       # Step 3: Commit and push the changes
       - name: Commit and push changes
