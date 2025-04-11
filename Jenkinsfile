@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/priyankamuley315/new.git'
+                git 'https://github.com/LondheShubham153/node-todo-cicd.git'
             }
         }
 
